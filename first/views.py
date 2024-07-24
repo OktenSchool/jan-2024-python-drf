@@ -37,8 +37,8 @@ from first.models import CarModel
 
 class CarListCreateView(APIView):
     def get(self, *args, **kwargs):
-        res = CarModel.objects.values_list('brand', flat=True)
-        # res = [model_to_dict(car) for car in cars]
+        cars = CarModel.objects.all()
+        res = [model_to_dict(car) for car in cars]
         return Response(res, status.HTTP_200_OK)
 
     def post(self, *args, **kwargs):
