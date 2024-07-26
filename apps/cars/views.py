@@ -1,11 +1,8 @@
-from rest_framework.generics import GenericAPIView, ListCreateAPIView, RetrieveUpdateDestroyAPIView
-from rest_framework.mixins import ListModelMixin, CreateModelMixin, UpdateModelMixin, DestroyModelMixin, \
-    RetrieveModelMixin
+from rest_framework.generics import ListCreateAPIView, RetrieveUpdateDestroyAPIView
 
-from cars.filter import car_filter
-from cars.models import CarModel
-from cars.serializers import CarSerializer
-
+from apps.cars.filter import car_filter
+from apps.cars.models import CarModel
+from apps.cars.serializers import CarSerializer
 
 # class CarListCreateView(GenericAPIView):
 #     def get(self, *args, **kwargs):
