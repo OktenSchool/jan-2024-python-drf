@@ -1,6 +1,7 @@
 from rest_framework import serializers
 
-from apps.cars.models import CarModel
+from cars.models import CarModel
+
 
 # class CarSerializer(serializers.Serializer):
 #     id = serializers.IntegerField(read_only=True)
