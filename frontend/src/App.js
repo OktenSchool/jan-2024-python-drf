@@ -11,6 +11,7 @@ const App = () => {
 
     return (
         <div>
+            <h1>Cars</h1>
             {cars.map(car=><div key={car.id}>{car.id} -- {car.brand}</div>)}
         </div>
     );

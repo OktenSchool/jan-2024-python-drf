@@ -7,12 +7,16 @@ readme = "README.md"
 
 [tool.poetry.dependencies]
 python = "^3.11"
-djangorestframework = "^3.15.2"
+djangorestframework = "^3.14.0"
 mysqlclient = "^2.2.4"
 django-filter = "^24.2"
 djangorestframework-simplejwt = "^5.3.1"
 pillow = "^10.4.0"
-#django-cors-headers = "^4.4.0"
+drf-yasg = "1.21.7"
+celery = "^5.4.0"
+redis = "^5.0.8"
+django-celery-results = "^2.5.1"
+django-celery-beat = "^2.6.0"
 
 
 [tool.poetry.group.dev.dependencies]

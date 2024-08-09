@@ -30,5 +30,21 @@ services:
       - "80:80"
     volumes:
       - ./client:/usr/share/nginx/html
+      - ./backend/static:/usr/share/nginx/doc
       - ./nginx.conf:/etc/nginx/conf.d/default.conf
     restart: on-failure
+
+  redis:
+    image: redis:alpine
+
+  celery:
+    build:
+      context: .
+    volumes:
+      - ./backend:/app
+    env_file:
+      - .env
+    restart: on-failure
+    command: >
+      sh -c "celery -A configs worker -l info -B"
+#      sh -c "celery -A configs worker -l info"

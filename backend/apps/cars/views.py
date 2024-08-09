@@ -1,3 +1,5 @@
+from django.utils.decorators import method_decorator
+
 from rest_framework import status
 from rest_framework.generics import (
     CreateAPIView,
@@ -9,6 +11,8 @@ from rest_framework.generics import (
 from rest_framework.permissions import AllowAny, IsAdminUser, IsAuthenticated
 from rest_framework.response import Response
 
+from drf_yasg.utils import swagger_auto_schema
+
 from core.permissions.is_super_user_permission import IsSuperUser
 from core.services.email_service import EmailService
 
@@ -17,7 +21,11 @@ from apps.cars.models import CarModel
 from apps.cars.serializers import CarPhotoSerializer, CarSerializer
 
 
+@method_decorator(name='get', decorator=swagger_auto_schema(security=[], operation_summary='create new car', operation_id='dddddddddd'))
 class CarListView(ListAPIView):
+    """
+    Get all cars
+    """
     serializer_class = CarSerializer
     queryset = CarModel.objects.all()
     filterset_class = CarFilter
@@ -25,6 +33,16 @@ class CarListView(ListAPIView):
 
 
 class CarRetrieveUpdateDestroyView(RetrieveUpdateDestroyAPIView):
+    """
+    get:
+        get car details
+    put:
+        update car
+    patch:
+        partial update car
+    delete:
+        delete car
+    """
     serializer_class = CarSerializer
     queryset = CarModel.objects.all()
 
