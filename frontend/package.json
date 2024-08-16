@@ -10,7 +10,13 @@
     "react-dom": "^18.3.1",
     "react-scripts": "5.0.1",
     "axios": "^1.7.3",
-    "npm-watch": "^0.13.0"
+    "npm-watch": "^0.13.0",
+    "react-router-dom": "^6.26.1",
+    "websocket": "^1.0.35",
+    "react-hook-form": "^7.52.2"
+  },
+  "devDependencies": {
+    "@types/websocket": "^1.0.10"
   },
   "watch": {
     "build": {
